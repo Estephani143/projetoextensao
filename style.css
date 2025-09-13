@@ -1,0 +1,267 @@
+@-webkit-keyframes shadow-pop-tr{0%{-webkit-box-shadow:0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e;box-shadow:0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e;-webkit-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0)}100%{-webkit-box-shadow:1px -1px #3e3e3e,2px -2px #3e3e3e,3px -3px #3e3e3e,4px -4px #3e3e3e,5px -5px #3e3e3e,6px -6px #3e3e3e,7px -7px #3e3e3e,8px -8px #3e3e3e;box-shadow:1px -1px #3e3e3e,2px -2px #3e3e3e,3px -3px #3e3e3e,4px -4px #3e3e3e,5px -5px #3e3e3e,6px -6px #3e3e3e,7px -7px #3e3e3e,8px -8px #3e3e3e;-webkit-transform:translateX(-8px) translateY(8px);transform:translateX(-8px) translateY(8px)}}@keyframes shadow-pop-tr{0%{-webkit-box-shadow:0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e;box-shadow:0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e,0 0 #3e3e3e;-webkit-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0)}100%{-webkit-box-shadow:1px -1px #3e3e3e,2px -2px #3e3e3e,3px -3px #3e3e3e,4px -4px #3e3e3e,5px -5px #3e3e3e,6px -6px #3e3e3e,7px -7px #3e3e3e,8px -8px #3e3e3e;box-shadow:1px -1px #3e3e3e,2px -2px #3e3e3e,3px -3px #3e3e3e,4px -4px #3e3e3e,5px -5px #3e3e3e,6px -6px #3e3e3e,7px -7px #3e3e3e,8px -8px #3e3e3e;-webkit-transform:translateX(-8px) translateY(8px);transform:translateX(-8px) translateY(8px)}}
+
+
+body {
+    margin: 0;
+    padding: 0rem;
+}
+
+.shadow-pop-tr:hover{-webkit-animation:shadow-pop-tr .3s cubic-bezier(.47,0.000,.745,.715) both;animation:shadow-pop-tr .3s cubic-bezier(.47,0.000,.745,.715) both}
+
+nav {
+    padding: 2rem;
+    transition: transform 0.3s ease; 
+}
+
+
+nav li:hover {
+    transition: 0.3s;
+    border-radius: 8px;
+    text-decoration: underline;
+    transform: scale(1.2); 
+}
+
+#dinheiro {
+  transition: transform 0.3s ease; 
+}
+
+#dinheiro:hover {
+  transform: scale(1.2); 
+}
+
+
+/* Cores */
+ :root{
+      --bg:#fff;
+      --card:#ffffff;
+      --accent:#08CB00; /* teal */
+      --muted:#6b7280;
+      --glass: #253900;
+      --shadow: 0 6px 18px rgba(2,6,23,0.08);
+      --radius: 14px;
+    }
+
+
+    *{
+        box-sizing:border-box
+    }
+
+    body {
+        font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; 
+        margin:0; background:linear-gradient(180deg,var(--bg),#fff); 
+        color:#0f172a; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale
+    }
+    
+    
+    header{
+        background:linear-gradient(90deg,#B6F500 0%, #A4DD00 100%); 
+        padding:36px 20px 24px; border-bottom:1px solid rgba(15,23,42,0.03)
+    }
+   
+   .btn {
+    display:inline-block;
+    padding:8px 12px;
+    background:var(--accent);
+    color:#fff;
+    border-radius:8px;
+    text-decoration:none;
+    border:0;
+    cursor:pointer;
+    font-weight:600;
+    transition: transform 0.3s ease;
+}
+
+/* Hover do botão Calcular */
+.btn:hover {
+    background: var(--accent); 
+    color: #fff;              
+    text-decoration: none;    
+    transform: scale(1.1);  
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));  
+}
+    .container{
+        max-width:980px; 
+        margin:0 auto;
+    }
+
+    h1{
+        margin:0 0 6px; 
+        font-size:28px
+    }
+
+    p.lead{
+        margin:0; 
+        color:var(--muted)
+    }
+
+    .grid{
+        display:grid; 
+        grid-template-columns:1fr 360px; gap:32px; margin-top:20px
+    }
+
+    /* cards */
+    .cards{
+        display:grid; 
+        gap:14px
+    }
+
+    .card{
+        background:var(--card); 
+        padding:16px; 
+        border-radius:12px; 
+        box-shadow:var(--shadow)
+    }
+
+    .card h3{
+        margin:0 0 8px; 
+        font-size:16px
+    }
+
+    .card p{
+        margin:0; 
+        color:var(--muted); 
+        font-size:14px
+    }
+
+    .methods{
+        display:grid; 
+        grid-template-columns:repeat(2,1fr); 
+        gap:12px
+    }
+
+    .method-card{
+        padding:14px; 
+        border-radius:10px; 
+        background:linear-gradient(180deg,#fff,#fbffff); 
+        border:1px solid rgba(10,20,20,0.03)
+    }
+
+    .method-card small{
+        display:block; 
+        color:var(--muted); 
+        margin-top:6px
+    }
+
+    .btn{
+        display:inline-block; 
+        padding:8px 12px; 
+        background:var(--accent); 
+        color:white; 
+        border-radius:8px; 
+        text-decoration:none; 
+        border:0; 
+        cursor:pointer; 
+        font-weight:600
+    }
+
+    /* calculator column */
+    aside{
+        position:relative
+    }
+
+    .panel{
+        position:sticky; 
+        top:18px
+    }
+
+    label{
+        font-size:13px; 
+        color:var(--muted); 
+        display:block; 
+        margin-bottom:6px
+    }
+
+    input[type=number], select{
+        width:100%; 
+        padding:10px 12px; 
+        border-radius:8px; 
+        border:1px solid #e6eef0; 
+        font-size:15px
+    }
+
+    .row{
+        display:flex; 
+        gap:10px
+    }
+
+    .result{
+        margin-top:14px; 
+        background:linear-gradient(180deg,#ffffff,#fbffff); 
+        padding:12px; 
+        border-radius:10px
+    }
+
+    table{
+        width:100%; 
+        border-collapse:collapse; 
+        margin-top:8px
+    }
+
+    th,td{
+        padding:8px 6px; 
+        text-align:left; 
+        font-size:14px
+    }
+
+    tr + tr td{
+        border-top:1px dashed #eef3f4
+    }
+
+    .small{
+        font-size:12px; 
+        color:var(--muted)
+    }
+
+    .muted{
+        color:var(--muted)
+    }
+
+    footer{
+        margin:30px 0 60px; 
+        text-align:center; 
+        color:var(--muted)
+    }
+
+
+.btn-form { 
+    font-size:16px; 
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+}
+.btn-form:hover {
+    color:#08CB00;
+    transform: scale(1.1); 
+}
+
+.method-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.method-card:hover {
+    color:#08CB00;
+}
+
+.card:hover {
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+    /* responsive */
+    @media (max-width:900px){
+      .grid{
+        grid-template-columns:1fr;
+    }
+
+      .methods{
+        grid-template-columns:1fr
+    }
+
+      aside{
+        order:-1
+    }
+    }

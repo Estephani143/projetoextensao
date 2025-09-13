@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" />
+    <title>Portal Educação Financeira</title>
+</head>
+<body>
+    <!-- JavaScript Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Fim JavaScript-->
+
+<!-- Navbar -->
+   <nav class="navbar navbar-expand-lg" style="background-color: #000;" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"><img id="dinheiro" src="./img/dinheiro.png" width="50" height="50" align="left" alt="Contém um gráfico com dinheiro"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav"><p style="color: #08CB00">&#8759</p>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="./trinta.html" style="color: #fff;">50/30/20</a>
+        </li><p style="color: #08CB00">&#8759</p>
+        <li class="nav-item">
+          <a class="nav-link" href="./detalhado.html" style="color: #fff;">Detalhado</a>
+        </li><p style="color: #08CB00">&#8759</p>
+        <li class="nav-item">
+          <a class="nav-link" href="./pague.html" style="color: #fff;">Pague-se Primeiro</a>
+        </li><p style="color: #08CB00">&#8759</p>
+        <li class="nav-item">
+          <a class="nav-link" href="./saida.html" style="color: #fff;">Saída de Dívidas</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Fim Navbar -->
+
+    <header class="shadow-pop-tr">
+    <div class="container">
+      <h1>Organize suas Finanças</h1>
+      <p class="lead" style="color: #000;">Descubra o método ideal e veja automaticamente como distribuir seu salário. Projeto pensado para extensão comunitária.</p>
+    </div>
+  </header>
+
+  <main class="container" style="padding:20px">
+    <div class="grid">
+      <section>
+        <div class="cards">
+          <div class="card">
+            <h3>Como funciona</h3>
+            <p class="muted">Escolha um método, informe seu salário e a calculadora exibirá quanto, em reais, deve ir para cada categoria. Você pode imprimir ou salvar o resultado.</p>
+          </div>
+
+          <div class="card">
+            <h3>Método Detalhado</h3>
+            <div style="margin-top:10px">
+              <div class="method-card">
+                <small>📌 Ter controle total de cada categoria de despesa.</small><br>
+                <small>💡 Como funciona:</small>
+                <small><strong style="color:#000">•</strong> Você define porcentagens específicas para cada área da sua vida (por exemplo: 15% moradia, 10% transporte, 12% alimentação, etc.).</small>
+                <small><strong style="color:#000">•</strong> Requer registro diário de gastos para não perder o controle.</small>
+                <br>
+                <small>✅ Vantagem: Maior precisão e controle.</small>
+                <small>⚠️ Ponto de atenção: Mais trabalhoso; precisa de disciplina para anotar tudo.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="feedbackCard">
+            <h3>Deixe seu Feedback</h3>
+            <p>Queremos saber sua opinião! Clique no botão abaixo para responder.</p>
+           <hr> <a href="https://forms.gle/LpUXvSDPNEwjEcUn8" target="_blank" class="btn-form">Responder Formulário</a>
+          </div>
+
+        </div>
+      </section>
+
+      <aside>
+        <div class="panel card">
+          <h3>Calculadora de Orçamento</h3>
+          <div style="margin-top:10px">
+            <label for="salary">Salário líquido (R$)</label>
+            <input id="salary" type="number" min="0" step="0.01" placeholder="Ex.: 2500.00" value="2500">
+          </div>
+
+          <div style="margin-top:10px">
+            <label for="method">Método</label>
+            <select id="method">
+              <option value="50-30-20">50 / 30 / 20</option>
+              <option value="detalhado">Detalhado</option>
+              <option value="pague-se">Pague-se Primeiro</option>
+              <option value="dividas">Saída de Dívidas</option>
+            </select>
+          </div>
+
+          <div id="pagueOptions" style="display:none; margin-top:10px">
+            <label for="savePercent">Percentual para poupar (pague-se) <span class="small">(<span id="saveValue">15</span>%)</span></label>
+            <input id="savePercent" type="range" min="5" max="40" value="15" oninput="document.getElementById('saveValue').innerText=this.value">
+          </div>
+
+          <div style="margin-top:14px" class="row">
+            <button class="btn" id="calcBtn">Calcular</button>
+            <button class="btn" id="copyBtn" style="background:#253900">Copiar resultado</button>
+          </div>
+
+          <div class="result" id="resultBox" style="display:none">
+            <div class="small muted">Resumo</div>
+            <div id="summary" style="margin-top:6px; font-weight:600"></div>
+            <table id="breakdown" aria-live="polite"></table>
+            <div style="margin-top:10px; display:flex; gap:8px">
+              <button class="btn" id="printBtn" style="background:#253900">Imprimir</button>
+              <button class="btn" id="downloadCsv" style="background:#08CB00">Baixar CSV</button>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <p class="small">Projeto feito para extensão comunitária. Estephani Gomes &copy; 2025</p>
+    </footer>
+  </main>
+
+<script language="javascript" src="index.js"></script>
+</body>
+</html>
